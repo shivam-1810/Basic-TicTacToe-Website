@@ -1,0 +1,138 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    background: url('/bg.jpg') no-repeat center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+}
+#header {
+    background: linear-gradient(45deg, rgb(102, 45, 167), rgb(0, 0, 0), rgb(145, 41, 64));
+    backdrop-filter: blur(120px);
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 0 15px;
+}
+#header::after {
+    content: "Welcome to Tic-Tac-Toe Game..!";
+    font-weight: 600;
+    margin: 0;
+    padding: 5px 2px;
+    font-family: cursive;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #d05ce7, 0 0 20px #9df7fa, 0 0 30px #d895c7, 0 0 40px #69f7d3;
+    animation-name: animatingText;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes animatingText {
+    0% {content: "Welcome";}
+    15% {content: "Welcome to";}
+    30% {content: "Welcome to Tic";}
+    45% {content: "Welcome to Tic-Tac";}
+    60% {content: "Welcome to Tic-Tac-Toe";}
+    75% {content: "Welcome to Tic-Tac-Toe Game";}
+    90% {content: "Welcome to Tic-Tac-Toe Game..";}
+    100% {content: "Welcome to Tic-Tac-Toe Game..!";}
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 0 20px;
+}
+#logo {
+    height: 150px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+.btn {
+    width: 350px;
+    padding: 20px 10px;
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 1000;
+    font-family: cursive;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    transform: skewX(0deg);
+    z-index: -1;
+}
+.btn:hover::before {
+    left: 100%;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid black;
+}
+
+@media (max-width: 768px) {
+    .btn {
+        font-size: 19px;
+    }
+
+    #header::after {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #logo {
+        height: 120px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 18px;
+    }
+
+    #header::after {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .btn {
+        font-size: 17px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    #header::after {
+        font-size: 1.1rem;
+    }
+}

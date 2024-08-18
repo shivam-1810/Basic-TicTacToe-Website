@@ -1,0 +1,147 @@
+body{
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.3s ease;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(45deg, black, grey);
+    backdrop-filter: blur(25px);
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #00ff99;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 20px auto;
+    width: 300px;
+}
+
+.cell {
+    background: #2b2b2b;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#a {
+    border-right: 5px solid #444;  
+    border-bottom: 5px solid #444;
+}
+
+#b {
+    border: 5px solid #444;
+    border-top: none;
+}
+
+#c {
+    border-bottom: 5px solid #444;
+    border-left: 5px solid #444;
+}
+
+#d {
+    border: 5px solid #444;
+    border-left: none;
+}
+
+#e {
+    border: 5px solid #444;
+}
+
+#f {
+    border: 5px solid #444;
+    border-right: none;
+}
+
+#g {
+    border-top: 5px solid #444;
+    border-right: 5px solid #444;
+}
+
+#h {
+    border: 5px solid #444;
+    border-bottom: none;
+}
+
+#i {
+    border-top: 5px solid #444;
+    border-left: 5px solid #444;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+}
+
+.cell.X {
+    background-color: #439e92;
+}
+
+.cell.O {
+    background-color: #e74c3c;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+#player-turn {
+    color: #00ff99;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+#replay {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00ff99;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#replay:hover {
+    background-color: #00cc77;
+}
+
+.hidden {
+    display: none;
+}
+
+body.player1-turn {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
+
+body.player2-turn {
+    background: linear-gradient(to right,  #ff416c, #ff4b2b);
+}
